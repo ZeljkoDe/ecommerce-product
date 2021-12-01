@@ -5,13 +5,80 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png"> -->
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
 </head>
 
 <body>
-  <h1>this is a test</h1>
-  <img src="./assets/images/about-img.png" alt="">
-  <h1>will it change</h1>
+
+  <nav class="container">
+    
+    <a href="index.html" class="logo"><img src="./assets/images/logo.svg" alt=""></a>
+    <ul>
+      <li>Collections</li>
+      <li>Men</li>
+      <li>Women</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li class="img">
+        <img src="./assets/images/icon-cart.svg" alt="cart icon image">
+      </li>
+      <li class="img">
+        <img src="./assets/images/image-avatar.png" alt="avatar image">
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <main class="container">
+
+    <section class="left">
+      <img class="main-img" src="./assets/images/image-product-1.jpg" alt="">
+      <div class="img-container">
+        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-2-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-3-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-4-thumbnail.jpg" alt="">
+      </div>
+    </section>
+    <section class="right">
+      <h4>Sneaker Company</h2>
+
+        <h1>Fall Limited Edition Sneakers</h1>
+
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+
+        <div class="discount">
+          <h2>$125.00</h2>
+          <span>50%</span>
+          <p>$250.00</p>
+        </div>
+
+        <div class="add-to-cart">
+          <div class="quantity">
+            <span>-</span>
+            <p>0</p>
+            <span>+</span>
+          </div>
+          <button>Add to cart</button>
+        </div>
+    </section>
+
+  </main>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
 </body>
 
 </html>

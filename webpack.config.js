@@ -20,9 +20,9 @@ module.exports = {
 		// after finishing run npm run build and change the path to ./dist
 		static: './src',
 	},
-	plugins: [ 
+	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Development',
+			title: 'Ecommerce-product',
 			template: path.resolve(__dirname, "src/template.html")
 		}),
 	],
