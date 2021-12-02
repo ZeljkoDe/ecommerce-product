@@ -36,6 +36,30 @@ img {
   width: 100%;
 }
 
+button {
+  flex: 0 0 60%;
+  border: none;
+  background: var(--clr-orange-1);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  color: var(--crl-white);
+  cursor: pointer;
+
+  &::before {
+    position: relative;
+    top: 2px;
+    content: url('../images/icon-cart.svg');
+    margin-right: 20px;
+    filter: brightness(0%) invert(100%);
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 .container{
   max-width: 1150px;
   margin-inline: auto;
@@ -71,6 +95,70 @@ nav {
         width: 50px;
       }
     }
+    .cart {
+      position: relative;
+      cursor: pointer;
+      .cart-wrapper{
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: -180px;
+        border-radius: 10px;
+        background: var(--crl-white);
+        width: 380px;
+        box-shadow: 1px 6px 10px var(--clr-blue-3);
+        h3{
+          color: var(--clr-blue-1);
+          padding: 20px;
+          border-bottom: 1px solid var(--clr-blue-3);
+        }
+        .empty{
+          text-align: center;
+          padding: 77px 0;
+          // display: none;
+        }
+
+        &.active{
+          display: block;
+        }
+
+        .added-product {
+          display: none;
+          padding: 30px 20px;
+          .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .product-img {
+              width: 50px;
+              border-radius: 5px;
+            }
+            .product-info {
+              strong{
+                color: var(--clr-black);
+              }
+            }
+            .product-delete {
+              height: 15px;
+              width: 13px;
+            }
+          }
+          button{
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px 0;
+
+            &::before{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .avatar:hover{
+      outline: 2px solid var(--clr-orange-1);
+      border-radius: 50%;
+    }
   }
 }
 
@@ -91,24 +179,58 @@ main {
         height: 480px;
         margin: 0 auto;
         border-radius: 15px;
+        margin-bottom: 33.3333px;
       }
 
       .img-container {
         display: flex;
-        padding-top: 33.3333px;
         justify-content: space-between;
         margin: 0 auto;
         width: 500px;
-
+        position: relative;
+        background: rgba(255, 255, 255, 0.5);
+        
         img {
           width: calc(80% / 4);
           border-radius: 10px;
+
+          &:hover{
+            opacity: 0.5;
+          }
+
+          &.active {
+            outline: 2px solid var(--clr-orange-1);
+            opacity: 1;
+            & ~ .overlay {
+              display: block;
+            }
+          }
+
+          &:nth-of-type(2).active ~ .overlay {
+            left: 133.3333px;
+          }
+          &:nth-of-type(3).active ~ .overlay {
+            left: 266.6666px;
+          }
+          &:nth-of-type(4).active ~ .overlay {
+            left: 399.9999px;
+          }
+        }
+        .overlay {
+          position: absolute;
+          content: '';
+          width: calc(80% / 4);
+          border-radius: 10px;
+          height: 100px;
+          aspect-ratio: 1;
+          background: rgba(255, 255, 255, 0.7);
+          display: none;
+          pointer-events: none;
         }
       }
     }
 
     .right {
-      // flex: 0 0 50%;
       h1{
         font-size: 48px;
         margin-bottom: 30px;
@@ -174,29 +296,12 @@ main {
             color: var(--clr-orange-1);
             font-size: 24px;
             margin-bottom: 4px;
+            cursor: pointer;
+            user-select: none;
           }
 
           p {
             margin-bottom: unset;
-          }
-        }
-
-        button {
-          flex: 0 0 60%;
-          border: none;
-          background: var(--clr-orange-1);
-          font-family: inherit;
-          font-size: 16px;
-          font-weight: 700;
-          border-radius: 10px;
-          color: var(--crl-white);
-
-          &::before {
-            position: relative;
-            top: 2px;
-            content: url('../images/icon-cart.svg');
-            margin-right: 20px;
-            filter: brightness(0%) invert(100%);
           }
         }
       }

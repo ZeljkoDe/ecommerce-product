@@ -14,7 +14,7 @@
 <body>
 
   <nav class="container">
-    
+
     <a href="index.html" class="logo"><img src="./assets/images/logo.svg" alt=""></a>
     <ul>
       <li>Collections</li>
@@ -22,11 +22,26 @@
       <li>Women</li>
       <li>About</li>
       <li>Contact</li>
-      <li class="img">
+      <li class="img cart">
         <img src="./assets/images/icon-cart.svg" alt="cart icon image">
+        <div class="cart-wrapper active">
+          <h3>Cart</h3>
+          <p class="empty">Your cart is empty.</p>
+          <div class="added-product">
+            <div class="row">
+              <img class="product-img" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+              <div class="product-info">
+                <p class="product-name">Fall Limited Edition Sneakers</p>
+                <p class="product-price">$125.00 x <span class="js-added-number">3 </span> <strong> $375.00</strong></p>
+              </div>
+              <img class="product-delete" src="./assets/images/icon-delete.svg" alt="">
+            </div>
+            <button>Checkout</button>
+          </div>
+        </div>
       </li>
       <li class="img">
-        <img src="./assets/images/image-avatar.png" alt="avatar image">
+        <img class="avatar" src="./assets/images/image-avatar.png" alt="avatar image">
       </li>
     </ul>
   </nav>
@@ -38,10 +53,11 @@
     <section class="left">
       <img class="main-img" src="./assets/images/image-product-1.jpg" alt="">
       <div class="img-container">
-        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+        <img class="active" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
         <img src="./assets/images/image-product-2-thumbnail.jpg" alt="">
         <img src="./assets/images/image-product-3-thumbnail.jpg" alt="">
         <img src="./assets/images/image-product-4-thumbnail.jpg" alt="">
+        <span class="overlay">&nbsp;</span>
       </div>
     </section>
     <section class="right">
@@ -62,11 +78,11 @@
 
         <div class="add-to-cart">
           <div class="quantity">
-            <span>-</span>
-            <p>0</p>
-            <span>+</span>
+            <span class="js-remove">-</span>
+            <p class="js-number">0</p>
+            <span class="js-add">+</span>
           </div>
-          <button>Add to cart</button>
+          <button class="btn-add">Add to cart</button>
         </div>
     </section>
 
